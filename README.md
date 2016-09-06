@@ -7,7 +7,7 @@ PNSMN is a javascript injection tool allowing live injection of javascript into 
 Extract the content of the archive in your root folder, and execute the "launchme" script. This script will install and configure nodeJS, and MITMf on your machine if they are not already installed.
 ```
 cd /root/PNSMN/installation
-./lauchme.sh
+./install.sh
 
 ```
 That's it, you are now ready to go ! :)
