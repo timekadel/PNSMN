@@ -19,4 +19,4 @@ cd /root/PNSMN
 ./pnsmn.sh
 
 ```
-Open your favorite browser and type in "localhost:3001/pnsmn/controlPanel/" in the address bar. If everything PNSMN was correctly installed, the following interface should be loaded into your browser: 
+Open your favorite browser and type in "localhost:5001/pnsmn/controlPanel" in the address bar. If everything PNSMN was correctly installed, the following interface should be loaded into your browser: 
