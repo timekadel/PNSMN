@@ -12,7 +12,7 @@ cd /root/PNSMN/installation
 ```
 That's it, you are now ready to go ! :)
 
-# Utilisation
+# Launching PNSMN
 In order to launch and use PNSM, go on the PNSMN intallation path and launch the "pnsmn.sh" script.
 ```
 cd /root/PNSMN
