@@ -1,3 +1,5 @@
+/!\ This is still an early version of the system. therefore, the installation procedure is still incomplete
+
 # PNSMN
 Pose ta Node Sur Mon Network
 
