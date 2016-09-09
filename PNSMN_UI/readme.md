@@ -1,6 +1,6 @@
 # PNSMN - Pose ta Node Sur Mon Network
 ##Introduction
-PNSMN is a NodeJS based live JavaScript injection tool. Able to discover clients on the network, PNSMN allows to inject a hooking script into any machine found on the network.
+This is a quick project I made to learn NodeJS, therefore, some part of the code might be a bit sh**ty, any tips and advices are welcomed :) ! PNSMN is a NodeJS based live JavaScript injection tool. Able to discover clients on the network, PNSMN allows to inject a hooking script into any machine found on the network.
 This script will then allow attacks to be triggered in real time from the UI to the client such as live text modification, live input scanning (keylogger), live redirection and a lot more.
 
 ##Installing PNMSN
