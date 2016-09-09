@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.01 scan initiated Fri Sep  9 18:26:37 2016 as: nmap -oX public/output.xml -sn 192.168.1.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.1.0/24" start="1473441997" startstr="Fri Sep  9 18:26:37 2016" version="7.01" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.1" addrtype="ipv4"/>
+<address addr="00:1D:AA:E7:1C:C0" addrtype="mac" vendor="DrayTek"/>
+<hostnames>
+</hostnames>
+<times srtt="15094" rttvar="15094" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.14" addrtype="ipv4"/>
+<address addr="84:11:9E:13:4E:26" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+</hostnames>
+<times srtt="52194" rttvar="52194" to="260970"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.16" addrtype="ipv4"/>
+<address addr="30:F7:72:34:B8:0B" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+</hostnames>
+<times srtt="123631" rttvar="123631" to="618155"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.17" addrtype="ipv4"/>
+<address addr="B8:27:EB:DB:06:B2" addrtype="mac" vendor="Raspberry Pi Foundation"/>
+<hostnames>
+</hostnames>
+<times srtt="98686" rttvar="98686" to="493430"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.25" addrtype="ipv4"/>
+<address addr="AC:18:26:3D:61:F8" addrtype="mac" vendor="Seiko Epson"/>
+<hostnames>
+</hostnames>
+<times srtt="140773" rttvar="140773" to="703865"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.28" addrtype="ipv4"/>
+<address addr="E4:68:A3:59:52:AD" addrtype="mac" vendor="Huawei Technologies"/>
+<hostnames>
+</hostnames>
+<times srtt="2588" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.29" addrtype="ipv4"/>
+<address addr="74:E5:0B:B0:3B:34" addrtype="mac" vendor="Intel Corporate"/>
+<hostnames>
+</hostnames>
+<times srtt="95755" rttvar="95755" to="478775"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.30" addrtype="ipv4"/>
+<address addr="70:5A:0F:C8:68:1D" addrtype="mac" vendor="Hewlett Packard"/>
+<hostnames>
+</hostnames>
+<times srtt="108885" rttvar="84409" to="446521"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.1.22" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</host>
+<runstats><finished time="1473442023" timestr="Fri Sep  9 18:27:03 2016" elapsed="25.75" summary="Nmap done at Fri Sep  9 18:27:03 2016; 256 IP addresses (9 hosts up) scanned in 25.75 seconds" exit="success"/><hosts up="9" down="247" total="256"/>
+</runstats>
+</nmaprun>

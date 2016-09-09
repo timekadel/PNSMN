@@ -1,0 +1,6 @@
+{
+  "name": "wtl-live-dashboard",
+  "version": "0.0.1",
+  "description": "nodejs implaementation for the WTL EHD ",
+  "dependencies": {}
+}

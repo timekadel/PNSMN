@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet"> 
+   <script src="https://use.fontawesome.com/88f50d35e9.js"></script> 
+    <title>JSchaos</title>
+  </head>
+  <body>
+     <style type="text/css">
+
+      body {
+        background-color: #393939;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+      }
+
+      .header{
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        height: 60px;
+        background-color: #2A2A2A;
+        border-bottom: 1px solid #e9e9e9;
+        margin-bottom: 20px;
+      }
+
+      #logo{
+        height: 60px;
+        margin-left: 10px;
+      }
+
+      #logoLabel{
+        color: #e9e9e9;
+        font-family: 'Source Sans Pro', sans-serif;
+        position: absolute;
+        top: 0px;
+        margin-left: 90px;
+        font-size: 40px;
+        width: 150px;
+        border-right: px solid #e9e9e9;
+        height: 55px;
+        padding-top: 5px;
+      }
+
+      .terminalContainer{
+        position: absolute;
+        top:60px;
+        bottom: 0px;
+        left:0px;
+        right:0px;
+        width: auto;
+        height: auto;
+        overflow-y: scroll;
+      }
+
+      #terminal{
+        font-family: 'Ubuntu Mono', monospace;
+        color: white;
+        margin-left: 5px;
+        display: inline-block;
+        margin-top:20px;
+      }
+
+      form{
+        position: relative;
+        display: inline-block;
+      }
+
+      input[type="text"]{
+        border: none;
+        background: transparent;
+        color: white;
+        display: inline;
+        position: relative;
+      }
+
+      #maxSize{
+        max-height: 200px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+    </style>
+
+    <div class="header"> 
+      <img id="logo" src="node.png"/><div id="logoLabel">PNSMN</div>
+    </div>
+    <div class="terminalContainer">
+      <div id="terminal">
+        <div style='color:#E74C3C;font-weight:bold;display:inline;'>root@localhost</div><div style='font-weight:bold;display:inline;'>:</div><div style='color:#5299C7;font-weight:bold;display:inline;'>~/Desktop/node</div><div style='font-weight:bold;display:inline;'>#</div><form><input type='text'></form></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+
+  var socket = io.connect();
+
+  socket.on('terminal', function(data){
+
+    $('form').remove();
+    $('input').remove();
+    $('#terminal').append("<div id='maxSize'>"+data+"</div>");
+    $('#terminal').append("<div style='color:#E74C3C;font-weight:bold;display:inline;'>root@localhost</div><div style='font-weight:bold;display:inline;'>:</div><div style='color:#5299C7;font-weight:bold;display:inline;'>~/Desktop/node</div><div style='font-weight:bold;display:inline;'>#</div><form><input type='text'></form></div>");
+
+    $(function() {
+      var wtf    = $('.terminalContainer');
+      var height = wtf[0].scrollHeight;
+      wtf.scrollTop(height);
+    });
+
+  $(function(){
+    $('form').submit(function(e){
+      var input = $('input');
+      if(input.val() == "clear"){
+        $('terminal').empty();
+        $('#terminal').append("<div style='color:#E74C3C;font-weight:bold;display:inline;'>root@localhost</div><div style='font-weight:bold;display:inline;'>:</div><div style='color:#5299C7;font-weight:bold;display:inline;'>~/Desktop/node</div><div style='font-weight:bold;display:inline;'>#</div><form><input type='text'></form></div>");
+      }else{
+        socket.send(input.val());
+        input.val('');
+        return false;
+      }
+    });
+  });
+
+    $('input').focus();
+
+  });
+
+  $(function(){
+    $('form').submit(function(e){
+      var input = $('input');
+      if(input.val() == "clear"){
+        $('terminal').empty();
+        $('#terminal').append("<div style='color:#E74C3C;font-weight:bold;display:inline;'>root@localhost</div><div style='font-weight:bold;display:inline;'>:</div><div style='color:#5299C7;font-weight:bold;display:inline;'>~/Desktop/node</div><div style='font-weight:bold;display:inline;'>#</div><form><input type='text'></form></div>");
+      }else{
+        socket.send(input.val());
+        input.val('');
+        return false;
+      }
+    });
+  });
+
+  $('input').focus();
+
+</script>
