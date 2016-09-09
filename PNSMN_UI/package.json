@@ -1,6 +1,6 @@
 {
-  "name": "wtl-live-dashboard",
+  "name": "pnsmn",
   "version": "0.0.1",
-  "description": "nodejs implaementation for the WTL EHD ",
+  "description": "nodejs packages for pnsmn",
   "dependencies": {}
 }
