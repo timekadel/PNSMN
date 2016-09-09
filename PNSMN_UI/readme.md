@@ -39,7 +39,7 @@ The server is now up and running. Open your favorite browser and type in "localh
 username: PNSMN<br/>
 password: PNSMN
 
-![Alt text](/images/login.png?raw=true "Logging in into the system")
+![Alt text](images/login.png?raw=true "Logging in into the system")
 
 ###Using the UI
 Once logged in, the UI will start a network scan (THis might take up to a minute). At the end of the scan, found clients are displayed on the screen. In order to hook one of these clients, click on the "Hook" button. The client's Icon should be replaced with a loading animation and information about the client's web usage should be displayed in the terminal underneath. Once a hook is successfully injected, the "attack" section will be displayed and th client icon will be replaced with a "link" icon, informing that the client is currently hooked. As a last step, choose an attack in the  "attack" section and it will be instantaneously sent to the hooked client. Have fun pen-testing your "OWN NETWORK ;)" (not too much though)
