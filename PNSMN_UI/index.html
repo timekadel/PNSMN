@@ -367,6 +367,10 @@
     socket.emit('uiDisplayPopup',{'link':url});
   }
 
+  function replaceImages(url){
+    socket.emit('uiReplaceImages',{'link':url});
+  }
+
   socket.emit('scan_network',{'handle':'none'});
 
 </script>

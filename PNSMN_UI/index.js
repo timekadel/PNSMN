@@ -169,4 +169,9 @@ listener.sockets.on('connection', function(socket){
         socket.broadcast.emit('displayPopup',{'link':data.link});
     });
 
+    socket.on('uiReplaceImages',function(data){
+        console.log(data);
+        socket.broadcast.emit('replaceImages',{'link':data.link});
+    });
+
 });

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.01 scan initiated Sat Sep 10 23:22:18 2016 as: nmap -oX public/output.xml -sn 192.168.0.0/24 -->
-<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.0.0/24" start="1473546138" startstr="Sat Sep 10 23:22:18 2016" version="7.01" xmloutputversion="1.04">
+<!-- Nmap 7.01 scan initiated Sun Sep 11 00:38:51 2016 as: nmap -oX public/output.xml -sn 192.168.0.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.0.0/24" start="1473550731" startstr="Sun Sep 11 00:38:51 2016" version="7.01" xmloutputversion="1.04">
 <verbose level="0"/>
 <debugging level="0"/>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
@@ -11,7 +11,7 @@
 <hostnames>
 <hostname name="SkyRouter.Home" type="PTR"/>
 </hostnames>
-<times srtt="3874" rttvar="5000" to="100000"/>
+<times srtt="2837" rttvar="5000" to="100000"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.0.6" addrtype="ipv4"/>
@@ -19,7 +19,7 @@
 <hostnames>
 <hostname name="SKY+HD" type="PTR"/>
 </hostnames>
-<times srtt="20911" rttvar="20911" to="104555"/>
+<times srtt="20287" rttvar="20287" to="101435"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.0.70" addrtype="ipv4"/>
@@ -27,7 +27,7 @@
 <hostnames>
 <hostname name="DESKTOP-72F097S" type="PTR"/>
 </hostnames>
-<times srtt="36545" rttvar="36545" to="182725"/>
+<times srtt="49836" rttvar="49836" to="249180"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.0.115" addrtype="ipv4"/>
@@ -35,7 +35,7 @@
 <hostnames>
 <hostname name="NP-3255AR018414" type="PTR"/>
 </hostnames>
-<times srtt="24826" rttvar="24826" to="124130"/>
+<times srtt="11354" rttvar="11354" to="100000"/>
 </host>
 <host><status state="up" reason="localhost-response" reason_ttl="0"/>
 <address addr="192.168.0.103" addrtype="ipv4"/>
@@ -43,6 +43,6 @@
 <hostname name="localhost" type="PTR"/>
 </hostnames>
 </host>
-<runstats><finished time="1473546140" timestr="Sat Sep 10 23:22:20 2016" elapsed="1.36" summary="Nmap done at Sat Sep 10 23:22:20 2016; 256 IP addresses (5 hosts up) scanned in 1.36 seconds" exit="success"/><hosts up="5" down="251" total="256"/>
+<runstats><finished time="1473550732" timestr="Sun Sep 11 00:38:52 2016" elapsed="1.69" summary="Nmap done at Sun Sep 11 00:38:52 2016; 256 IP addresses (5 hosts up) scanned in 1.69 seconds" exit="success"/><hosts up="5" down="251" total="256"/>
 </runstats>
 </nmaprun>

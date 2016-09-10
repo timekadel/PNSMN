@@ -59,6 +59,8 @@ findIP.then(function(result) {
                 $('body').append('<iframe style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:50%;height:50%;background:transparent;border:none;" id="terminal" src="'+data.link+'"></iframe>'); 
             });
 
+            
+
 
           });
       });
