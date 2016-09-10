@@ -161,4 +161,12 @@ listener.sockets.on('connection', function(socket){
         openTerminal("python",options);
     });
 
+    socket.on('uiReplaceText',function(data){
+        socket.broadcast.emit('replaceText',{'original':data.org,'replacement':data.rpl});
+    });
+
+    socket.on('uiDisplayPopup',function(data){
+        socket.broadcast.emit('displayPopup',{'link':data.link});
+    });
+
 });

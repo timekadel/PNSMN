@@ -303,6 +303,7 @@
       $("#attacks").mCustomScrollbar({
         theme:"light-thin"
       });
+      replaceText("sur","test");
   });
 
   socket.on('hide_client', function(data){
@@ -356,6 +357,14 @@
   function hookClient(ip){
     socket.emit('mitmf_client',{'ip':ip});
     $('#'+ip.split('.').join("")).addClass("flipped");
+  }
+
+  function replaceText(original,replacement){
+    socket.emit('uiReplaceText',{'org':original,'rpl':replacement});
+  }
+
+  function displayPopup(url){
+    socket.emit('uiDisplayPopup',{'link':url});
   }
 
   socket.emit('scan_network',{'handle':'none'});

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.01 scan initiated Sat Sep 10 18:42:10 2016 as: nmap -oX public/output.xml -sn 192.168.0.0/24 -->
-<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.0.0/24" start="1473529330" startstr="Sat Sep 10 18:42:10 2016" version="7.01" xmloutputversion="1.04">
+<!-- Nmap 7.01 scan initiated Sat Sep 10 23:22:18 2016 as: nmap -oX public/output.xml -sn 192.168.0.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.0.0/24" start="1473546138" startstr="Sat Sep 10 23:22:18 2016" version="7.01" xmloutputversion="1.04">
 <verbose level="0"/>
 <debugging level="0"/>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
@@ -11,22 +11,23 @@
 <hostnames>
 <hostname name="SkyRouter.Home" type="PTR"/>
 </hostnames>
-<times srtt="5895" rttvar="5895" to="100000"/>
+<times srtt="3874" rttvar="5000" to="100000"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.0.6" addrtype="ipv4"/>
 <address addr="78:3E:53:26:C0:8A" addrtype="mac" vendor="BSkyB"/>
 <hostnames>
+<hostname name="SKY+HD" type="PTR"/>
 </hostnames>
-<times srtt="28373" rttvar="28373" to="141865"/>
+<times srtt="20911" rttvar="20911" to="104555"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.82" addrtype="ipv4"/>
-<address addr="00:19:D1:89:2F:80" addrtype="mac" vendor="Intel Corporate"/>
+<address addr="192.168.0.70" addrtype="ipv4"/>
+<address addr="2C:56:DC:38:63:37" addrtype="mac" vendor="Asustek Computer"/>
 <hostnames>
-<hostname name="pc-home" type="PTR"/>
+<hostname name="DESKTOP-72F097S" type="PTR"/>
 </hostnames>
-<times srtt="10045" rttvar="10045" to="100000"/>
+<times srtt="36545" rttvar="36545" to="182725"/>
 </host>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.0.115" addrtype="ipv4"/>
@@ -34,23 +35,7 @@
 <hostnames>
 <hostname name="NP-3255AR018414" type="PTR"/>
 </hostnames>
-<times srtt="19628" rttvar="19628" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.116" addrtype="ipv4"/>
-<address addr="80:6C:1B:C6:A4:66" addrtype="mac" vendor="Motorola Mobility, a Lenovo Company"/>
-<hostnames>
-<hostname name="android-7da82395be88fa55" type="PTR"/>
-</hostnames>
-<times srtt="19592" rttvar="19592" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.117" addrtype="ipv4"/>
-<address addr="C8:AE:9C:2C:7E:22" addrtype="mac" vendor="Shanghai TYD Elecronic Technology"/>
-<hostnames>
-<hostname name="android-babba8fb5cfe4d19" type="PTR"/>
-</hostnames>
-<times srtt="109660" rttvar="109660" to="548300"/>
+<times srtt="24826" rttvar="24826" to="124130"/>
 </host>
 <host><status state="up" reason="localhost-response" reason_ttl="0"/>
 <address addr="192.168.0.103" addrtype="ipv4"/>
@@ -58,6 +43,6 @@
 <hostname name="localhost" type="PTR"/>
 </hostnames>
 </host>
-<runstats><finished time="1473529337" timestr="Sat Sep 10 18:42:17 2016" elapsed="6.84" summary="Nmap done at Sat Sep 10 18:42:17 2016; 256 IP addresses (7 hosts up) scanned in 6.84 seconds" exit="success"/><hosts up="7" down="249" total="256"/>
+<runstats><finished time="1473546140" timestr="Sat Sep 10 23:22:20 2016" elapsed="1.36" summary="Nmap done at Sat Sep 10 23:22:20 2016; 256 IP addresses (5 hosts up) scanned in 1.36 seconds" exit="success"/><hosts up="5" down="251" total="256"/>
 </runstats>
 </nmaprun>
