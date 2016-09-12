@@ -1,0 +1,209 @@
+@font-face{
+	font-family: autor;
+	src: url(autoradiographicrg.ttf);
+}
+
+body{
+	background: #E9EAED;
+	background-size: 100%;
+	margin: 0;
+	padding: 0
+	overflow-x:scroll;
+}
+
+.header{
+	position:absolute;
+	top:0px;
+	width: 100%;
+	height: 80px;
+	border-bottom: solid 1px #1C326C;
+	background-color: #3B5997;
+}
+
+.logo{
+	position:absolute;
+	left:0px;
+	top:2px;
+	cursor: pointer;
+}
+
+.bite{
+	height:30px;
+	margin-top:25px;
+	font-family: verdana;
+	font-size: 12px;
+	color: #333;
+	font-weight: normal;
+}
+
+.finaltxt{
+	position:relative;
+	margin-top:10px;
+	color:#3b5998;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.form{
+	position:relative;
+	margin: auto;
+	margin-top:160px;
+	padding: 22px 108px 26px;
+	width: 396px;
+	height: 290px;
+	text-align:center;
+	font-size: 18px;
+	font-family: helvetica,arial,sans-serif;
+	color:black;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	border-radius: 3px;
+	background-color: #FFFFFF;
+}
+
+input::-webkit-input-placeholder {
+color: #bdc7d8 !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: #bdc7d8 !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #bdc7d8 !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: #bdc7d8 !important;  
+}
+
+.inputter{
+	margin-top:15px;
+}
+
+.tb1{
+	margin-top:15px;
+	border: 1px solid #d3d6db;
+	height: 32px;
+	width: 284px;
+	color: #141823;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+	padding: 0 8px;
+	vertical-align: middle;
+}
+
+.signupnow{
+	margin-top:12px;
+	border: 1px solid;
+	border-radius: 2px;
+	height: 42px;
+	width: 284px;
+	background-color: #4e69a2;
+	border-color: #435a8b #3c5488 #334c83;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	cursor: pointer;
+}
+
+br{
+	margin-top:32px;
+}
+
+.footer{
+	position:absolute;
+	bottom:0px;
+	width: 100%;
+	height: 170px;
+	background-color: #FFFFFF;
+	color:#3B5998;
+	padding-top:10px;
+	padding-left:0px;
+}
+
+.footersep{
+	position:absolute;
+	bottom:0px;
+	width: 100%;
+	height: 130px;
+	background-color: #FFFFFF;
+	color:#3B5998;
+	border-top: solid 1px #CCCCCC;
+	padding-top:10px;
+	padding-left:0px;
+}
+
+.footerul{
+	font-size: 12px;
+	font-family: helvetica,arial,sans-serif;
+	list-style-type: none;
+	display: inline;
+	left:10px;
+	cursor: pointer;
+}
+
+.footerul2{
+	width:100%;
+	color:#3B5998;
+	position:absolute;
+	bottom:100px;
+	left:-50px;
+	font-size: 12px;
+	font-family: helvetica,arial,sans-serif;
+	list-style-type: none;
+	display: inline;
+	cursor: pointer;
+}
+
+.lolo{
+	left:200px;
+	top:30px;
+	position:absolute;
+	background-color: #6bb933;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+	border-radius: 1px;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	height:26px;
+	width:71px;
+	font-size: 12px;
+	line-height: 26px;
+	cursor: pointer;
+}
+
+.footerul3{
+	color:#3B5998;
+	position:absolute;
+	bottom:80px;
+	left:-50px;
+	font-size: 12px;
+	font-family: helvetica,arial,sans-serif;
+	list-style-type: none;
+	display: inline;
+	cursor: pointer;
+}
+
+li {
+ 	margin-left:10px;
+ 	float:left; /*pour IE*/
+ }
+
+li.lol {
+ 	margin-left:20px;
+ 	float:left; /*pour IE*/
+ }

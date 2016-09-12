@@ -6,7 +6,7 @@ var http = require('http').Server(app);
 var terminal = require("web-terminal");
 var url = require('url');
 var fs = require('fs');
-var io = require('socket.io')(http);
+var io = require('socket.io')(http, { pingTimeout: 600000});
 var url = require('url') ;
 var bodyParser = require('body-parser');
 var Convert = require('ansi-to-html');
@@ -14,6 +14,7 @@ var convert = new Convert();
 var sys   = require('sys'),
     util  = require('util'),
     spawn = require('child_process').spawn;
+
 
 /*
 Virtual terminal Configuration:
@@ -28,7 +29,9 @@ function openTerminal(arg,options){
     sh.stdout.on('data', function(data) {
         console.log(data.toString());
         listener.sockets.emit('terminal',{"text":convert.toHtml(data.toString())});
-        scannedClients();
+        if(arg == "nmap"){
+            scannedClients();
+        }
     });
 
     sh.stderr.on('data', function (data) {
@@ -125,6 +128,8 @@ Listening to sockets and emitting data
 */
 listener.sockets.on('connection', function(socket){
 
+    socket.heartbeatTimeout = 200000;
+
     var tmstp = socket.handshake.time;
     var ref = socket.handshake.headers.referer;
     var os = require('os');
@@ -172,6 +177,12 @@ listener.sockets.on('connection', function(socket){
     socket.on('uiReplaceImages',function(data){
         console.log(data);
         socket.broadcast.emit('replaceImages',{'link':data.link});
+    });
+
+    socket.on('temp_file',function(data){
+        fs.writeFile('public/temp/temp.html',data.fileString, function (err) {
+          if (err) return console.log(err);
+        });
     });
 
 });

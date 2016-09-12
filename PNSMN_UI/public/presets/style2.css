@@ -1,0 +1,128 @@
+@font-face{
+	font-family: autor;
+	src: url(autoradiographicrg.ttf);
+}
+
+body{
+	background:white;
+	background-size: 100%;
+	margin: 0;
+	padding: 0
+}
+
+header{
+	position:relative;
+	width: 100%;
+	height: 82px;
+	background-color: #3a5795;
+	border: 0;
+	border-bottom: 1px solid #133783;
+}
+
+.container{
+	background: linear-gradient(white, #D3D8E8);
+}
+
+div.title{
+	margin-bottom: 10px;
+	position:relative;
+	font-family: autor;
+	font-size: 48px;
+	color: #474036;
+}
+
+div.subtitle{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	position:relative;
+	font-family: autor;
+	font-size: 20px;
+	color: #474036;
+}
+
+div.name{
+	display: inline;
+	position: absolute;
+	top: 15px;
+	left: 50px;
+	font-family: autor;
+	font-size: 30px;
+	color: white;
+}
+
+div.center{
+	position: absolute;
+	top: 25px;
+	right: 150px;
+}
+
+input.tb{
+	width:150px;
+	height:25px;
+	border:1px solid #1d2a5b;
+    margin: 0;
+    width: 142px;
+	padding-left: 5px;
+	margin-left:15px;
+}
+
+input.tb1{
+	width:150px;
+	height:25px;
+	border-radius:3px;
+	border: 1px solid #DBDBDB;
+	padding-left: 5px;
+}
+
+input.tb2{
+	width:305px;
+	height:30px;
+	border-radius:3px;
+	border: 1px solid #DBDBDB;
+	padding-left: 5px;
+}
+
+
+input.sub{
+	position: absolute;
+	right: 0px;
+	top: 3px;
+	width:40px;
+	height:25px;
+    background-color: #5b74a8;
+    border:1px solid ;
+    border-color: #2f477a #29447e #1a356e;
+    font-family: helvetica, arial, sans-serif;
+	color: white;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	margin-right:-45px;
+}
+
+input.signupnow{
+	width:150px;
+	height:30px;
+	background-color: #474036;
+	border-radius: 3px;
+	border: 1px solid #474036;
+	font-family: autor;
+	color: white;
+}
+
+div.form{
+	position: absolute;
+	top: 100px;
+	right: 150px;
+}
+
+table.subscribe{
+	margin-top: 20px;
+}
+
+.default{
+	padding-top: 20px;
+	font-family: arial;
+	font-size: 10px;
+	color: #474036;
+}
