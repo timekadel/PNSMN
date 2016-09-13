@@ -73,7 +73,8 @@
       }
 
       .active{
-        background-color: white;
+        /*background-color: white;*/
+        display: block;
       }
 
       .attack:hover{
@@ -434,7 +435,7 @@
         </form>
         <button id="imrpl" onclick="replaceImages(document.getElementById('popupurl').value)">Replace images</button>
       </div>
-        <!--div id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div-->
+        <div class="active" id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
       </div>
     </div>
   </div>
