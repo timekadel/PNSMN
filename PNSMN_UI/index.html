@@ -69,7 +69,7 @@
       }
 
       .attack{
-        display: none;
+        
       }
 
       .active{
@@ -336,6 +336,7 @@
         padding-bottom: 15px;
         margin-bottom: 20px;
         border-bottom: 1px solid #393939;
+        text-overflow: emphasis;
       }
 
     </style>
@@ -354,7 +355,6 @@
 
     <div id="container">
       <div id="attacks">
-      <div id="empty">SERVICES ARE NOT AVAILABLE<br><i class="fa fa-info-circle" aria-hidden="true"></i> </div>
         <div class="attack" id="alert-attack" onclick="displayAttackOptions(event,'displayPopup')">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
@@ -435,7 +435,7 @@
         </form>
         <button id="imrpl" onclick="displayPopup(document.getElementById('popupurl').value)">Replace images</button>
       </div>
-        <div class="active" id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
+        <div style="display:block;" class="content active" id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
       </div>
     </div>
 
@@ -453,8 +453,6 @@
       <div id="keylogger">
       </div>
     </div>
-
-
   </div>
 
   <div id="terminalContainer">

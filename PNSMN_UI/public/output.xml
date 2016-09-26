@@ -1,99 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.01 scan initiated Wed Sep 14 18:41:26 2016 as: nmap -oX public/output.xml -sn 192.168.1.0/24 -->
-<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.1.0/24" start="1473874886" startstr="Wed Sep 14 18:41:26 2016" version="7.01" xmloutputversion="1.04">
+<!-- Nmap 7.01 scan initiated Mon Sep 26 10:16:09 2016 as: nmap -oX public/output.xml -sn 192.168.43.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.43.0/24" start="1474877769" startstr="Mon Sep 26 10:16:09 2016" version="7.01" xmloutputversion="1.04">
 <verbose level="0"/>
 <debugging level="0"/>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.1" addrtype="ipv4"/>
-<address addr="00:1D:AA:E7:1C:C0" addrtype="mac" vendor="DrayTek"/>
-<hostnames>
-</hostnames>
-<times srtt="1536" rttvar="5000" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.16" addrtype="ipv4"/>
-<address addr="30:F7:72:34:B8:0B" addrtype="mac" vendor="Hon Hai Precision Ind."/>
-<hostnames>
-</hostnames>
-<times srtt="8861" rttvar="8861" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.17" addrtype="ipv4"/>
-<address addr="B8:27:EB:8E:53:E7" addrtype="mac" vendor="Raspberry Pi Foundation"/>
-<hostnames>
-</hostnames>
-<times srtt="6888" rttvar="6888" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.18" addrtype="ipv4"/>
-<address addr="DC:53:60:F6:67:CE" addrtype="mac" vendor="Intel Corporate"/>
-<hostnames>
-</hostnames>
-<times srtt="95823" rttvar="95823" to="479115"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.19" addrtype="ipv4"/>
-<address addr="B8:27:EB:8E:53:E7" addrtype="mac" vendor="Raspberry Pi Foundation"/>
-<hostnames>
-</hostnames>
-<times srtt="2331" rttvar="5000" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.23" addrtype="ipv4"/>
-<address addr="80:19:34:20:92:6B" addrtype="mac" vendor="Intel Corporate"/>
-<hostnames>
-</hostnames>
-<times srtt="53197" rttvar="53197" to="265985"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.25" addrtype="ipv4"/>
-<address addr="AC:18:26:3D:61:F8" addrtype="mac" vendor="Seiko Epson"/>
-<hostnames>
-</hostnames>
-<times srtt="50683" rttvar="50683" to="253415"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.26" addrtype="ipv4"/>
-<address addr="08:D4:0C:4C:BA:35" addrtype="mac" vendor="Intel Corporate"/>
-<hostnames>
-</hostnames>
-<times srtt="51954" rttvar="51954" to="259770"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.28" addrtype="ipv4"/>
+<address addr="192.168.43.1" addrtype="ipv4"/>
 <address addr="84:11:9E:13:4E:26" addrtype="mac" vendor="Samsung Electronics"/>
 <hostnames>
 </hostnames>
-<times srtt="53529" rttvar="53529" to="267645"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.29" addrtype="ipv4"/>
-<address addr="74:E5:0B:B0:3B:34" addrtype="mac" vendor="Intel Corporate"/>
-<hostnames>
-</hostnames>
-<times srtt="53325" rttvar="49342" to="250693"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.30" addrtype="ipv4"/>
-<address addr="70:5A:0F:C8:68:1D" addrtype="mac" vendor="Hewlett Packard"/>
-<hostnames>
-</hostnames>
-<times srtt="53523" rttvar="53523" to="267615"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.32" addrtype="ipv4"/>
-<address addr="1C:67:58:2D:5E:8F" addrtype="mac"/>
-<hostnames>
-</hostnames>
-<times srtt="117989" rttvar="88915" to="473649"/>
+<times srtt="4351" rttvar="4045" to="100000"/>
 </host>
 <host><status state="up" reason="localhost-response" reason_ttl="0"/>
-<address addr="192.168.1.22" addrtype="ipv4"/>
+<address addr="192.168.43.248" addrtype="ipv4"/>
 <hostnames>
 </hostnames>
 </host>
-<runstats><finished time="1473874917" timestr="Wed Sep 14 18:41:57 2016" elapsed="30.38" summary="Nmap done at Wed Sep 14 18:41:57 2016; 256 IP addresses (13 hosts up) scanned in 30.38 seconds" exit="success"/><hosts up="13" down="243" total="256"/>
+<runstats><finished time="1474877771" timestr="Mon Sep 26 10:16:11 2016" elapsed="2.01" summary="Nmap done at Mon Sep 26 10:16:11 2016; 256 IP addresses (2 hosts up) scanned in 2.01 seconds" exit="success"/><hosts up="2" down="254" total="256"/>
 </runstats>
 </nmaprun>
