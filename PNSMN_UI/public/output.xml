@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.01 scan initiated Mon Sep 26 10:16:09 2016 as: nmap -oX public/output.xml -sn 192.168.43.0/24 -->
-<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.43.0/24" start="1474877769" startstr="Mon Sep 26 10:16:09 2016" version="7.01" xmloutputversion="1.04">
+<!-- Nmap 7.01 scan initiated Wed Sep 28 13:48:21 2016 as: nmap -oX public/output.xml -sn 192.168.43.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX public/output.xml -sn 192.168.43.0/24" start="1475063301" startstr="Wed Sep 28 13:48:21 2016" version="7.01" xmloutputversion="1.04">
 <verbose level="0"/>
 <debugging level="0"/>
 <host><status state="up" reason="arp-response" reason_ttl="0"/>
@@ -10,13 +10,13 @@
 <address addr="84:11:9E:13:4E:26" addrtype="mac" vendor="Samsung Electronics"/>
 <hostnames>
 </hostnames>
-<times srtt="4351" rttvar="4045" to="100000"/>
+<times srtt="2064" rttvar="4088" to="100000"/>
 </host>
 <host><status state="up" reason="localhost-response" reason_ttl="0"/>
 <address addr="192.168.43.248" addrtype="ipv4"/>
 <hostnames>
 </hostnames>
 </host>
-<runstats><finished time="1474877771" timestr="Mon Sep 26 10:16:11 2016" elapsed="2.01" summary="Nmap done at Mon Sep 26 10:16:11 2016; 256 IP addresses (2 hosts up) scanned in 2.01 seconds" exit="success"/><hosts up="2" down="254" total="256"/>
+<runstats><finished time="1475063304" timestr="Wed Sep 28 13:48:24 2016" elapsed="2.10" summary="Nmap done at Wed Sep 28 13:48:24 2016; 256 IP addresses (2 hosts up) scanned in 2.10 seconds" exit="success"/><hosts up="2" down="254" total="256"/>
 </runstats>
 </nmaprun>

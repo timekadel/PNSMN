@@ -339,6 +339,10 @@
         text-overflow: emphasis;
       }
 
+      #keylogger{
+      	font-family: "Source Sans Pro";
+      }
+
     </style>
 
   <div class="header"> 
@@ -355,7 +359,7 @@
 
     <div id="container">
       <div id="attacks">
-        <div class="attack" id="alert-attack" onclick="displayAttackOptions(event,'displayPopup')">
+        <div class="attack" id="alert-attack" onclick="displayAttackOptions(event,'toggleAlert')">
             <div id="status">
               <div id="statusLabel"><i class="fa fa-upload" aria-hidden="true"></i></div>
               <div id="attackTitle">Toggle alert box</div>
@@ -434,6 +438,11 @@
            </div>
         </form>
         <button id="imrpl" onclick="displayPopup(document.getElementById('popupurl').value)">Replace images</button>
+      </div>
+      <div class="content" id="toggleAlert">
+     	 <div id="description">Displays an alertBox on the client's machine</div>
+        <input id="alt" name="alt" type="text" placeholder="Alert box content"/>
+        <button onclick="replaceText(document.getElementById('alt').value)">Toggle Alert</button>
       </div>
         <div style="display:block;" class="content active" id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
       </div>
