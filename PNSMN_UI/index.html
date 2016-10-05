@@ -442,7 +442,7 @@
       <div class="content" id="toggleAlert">
      	 <div id="description">Displays an alertBox on the client's machine</div>
         <input id="alt" name="alt" type="text" placeholder="Alert box content"/>
-        <button onclick="replaceText(document.getElementById('alt').value)">Toggle Alert</button>
+        <button onclick="toggleAlert(document.getElementById('alt').value)">Toggle Alert</button>
       </div>
         <div style="display:block;" class="content active" id="empty">NO SERVICE SELECTED<br><i class="fa fa-bomb" aria-hidden="true"></i></div>
       </div>
@@ -598,6 +598,10 @@ function displayAttackOptions(evt, attackName) {
 
   function replaceImages(url){
     socket.emit('uiReplaceImages',{'link':url});
+  }
+
+  function toggleAlert(text){
+  	socket.emit('toggleAlert_ui',{'text':text});
   }
 
   socket.emit('scan_network',{'handle':'none'});
