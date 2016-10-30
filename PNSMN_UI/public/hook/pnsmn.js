@@ -31,10 +31,10 @@ findIP.then(function(result) {
   include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', function() {
       $(document).ready(function() {
           //Injecting the socket.io script within the client's webpage
-          $.getScript('http://172.21.3.73:5001/socket.io/socket.io.js', function() {
+          $.getScript('http://192.168.1.5:5001/socket.io/socket.io.js', function() {
 
             //Creating client's socket
-            var socket = io("http://172.21.3.73:5001");
+            var socket = io("http://192.168.1.5:5001");
 
             //Sending client's IP to the server
             socket.emit('client_connected',{"ip":result});

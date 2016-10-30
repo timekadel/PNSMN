@@ -1,0 +1,4 @@
+MITMF install: add pip install pyyaml ua-parser user-agents
+MITMF install: add pip install dnslib
+
+MITMF run: gateway detection is wrong most of the time..
